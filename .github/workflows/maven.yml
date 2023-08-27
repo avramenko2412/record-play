@@ -23,4 +23,17 @@ jobs:
       run: mvn clean install
     - name: Run Tests
       run: mvn test
-   
+  name: Automatic Build and Test
+
+  on:
+    push:
+      branches: [ "main" ]  
+
+  jobs:
+      build-and-test:
+        		runs-on: ubuntu-latest  
+
+
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2  
